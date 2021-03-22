@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DownloadNews</title>
+</head>
+
+<body>
+
+<p>Привет! вы попали на приложение для скачивания новостей.</p>
+<p>Пожалуйста, введите параметры</p>
+
+<form method="GET" action="/parameters">
+    <label for="threadNumber">Введите количество потоков: </label>
+    <input name = "threadNumber" type="number" id="threadNumber"/>
+    <br>
+    <p></p>
+
+
+    <label for="newsPerCylcle">Введите количество статей для одного потока за цикл: </label>
+    <input name = "newsPerCylcle" type="number" id="newsPerCylcle"/>
+    <br>
+    <p></p>
+
+
+    <label for="newsNumber">Введите количество записей для скачивания: </label>
+    <input name = "newsNumber" type="number" id="newsNumber"/>
+    <br>
+    <p></p>
+
+    <label for="bufferLimit">Введите ограничение для статей для буфера: </label>
+    <input name = "bufferLimit" type="number" id="bufferLimit"/>
+    <br>
+    <p></p>
+
+    <label for="banWords">Введите слова через запятую, по которым исключить заголовки: </label>
+    <input name = "banWords" type="text" id="banWords"/>
+    <br>
+    <p></p>
+
+    <input type="submit" value="Установить"/>
+</form>
+
+</body>
+
+</html>

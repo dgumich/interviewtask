@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>DownloadNews</title>
+</head>
+<body>
+
+<div th:if="${articles.get(0)==null}">
+    <div>Ошибка в названии сайти или id статьи</div>
+</div>
+
+<div th:unless="${articles.get(0)==null}">
+
+    <table border="1" id = "articlestab">
+
+        <thead>
+        <tr >
+            <th>Id статьи</th>
+            <th>Название</th>
+            <th>Название сайта</th>
+            <th>День публикации</th>
+            <th>Статья</th>
+
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="article : ${articles}">
+            <td><span th:text="${article.getId()}"> Id статьи </span></td>
+            <td><span th:text="${article.getTitle()}"> Название </span></td>
+            <td><span th:text="${article.getNewsSite()}"> Название сайта </span></td>
+            <td><span th:text="${article.getPublishedDate()}"> День Публикации </span></td>
+            <td><span th:text="${article.getArticle()}"> Статья </span></td>
+            <!-- <td><a th:href="@{/expense/{id}(id=${expense.getId()})}"> Редактировать </a></td> -->
+
+        </tr>
+        </tbody>
+
+
+
+    </table>
+
+</div>
+
+
+
+
+</body>
+</html>
